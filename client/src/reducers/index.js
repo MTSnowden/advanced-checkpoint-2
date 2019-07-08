@@ -1,11 +1,15 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+
+
+function movies(state = [], action) {
+  if (action.type === "MOVIES_FETCHED") {
+    return action.value;
+  }
   return state;
 }
 
-
 const rootReducer = combineReducers({
-  someThing
+  movies
 });
 export default rootReducer;

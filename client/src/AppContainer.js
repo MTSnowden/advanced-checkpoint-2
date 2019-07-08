@@ -1,10 +1,8 @@
-import App from "./App";
-import "./App.css";
 import { connect } from "react-redux";
+import App from "./App";
+import {fetchMovies} from "./actions/index";
 
-function mapDispatchToProps(dispatch) {
-  return {
-  };
-}
 
-export default connect(null,mapDispatchToProps)(App);
+const mapDispatchToProps = { fetchMovies: fetchMovies };
+
+export default connect(null, mapDispatchToProps)(App);  

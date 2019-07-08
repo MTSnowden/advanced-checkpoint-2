@@ -57,4 +57,4 @@ class CreateMovie extends Component {
     }
 }
 
-export default CreateMovie();
+export default CreateMovie;

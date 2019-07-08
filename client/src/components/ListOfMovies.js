@@ -18,4 +18,4 @@ const ListOfMovies = (props) => {
     );
   }
   
-  export default ListOfMovies();
+  export default ListOfMovies;

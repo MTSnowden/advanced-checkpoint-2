@@ -16,4 +16,4 @@ function MovieDetail(props) {
     </div>
   );
 }
-export default MovieDetail();
+export default MovieDetail;

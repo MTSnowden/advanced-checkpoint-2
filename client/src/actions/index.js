@@ -1,11 +1,10 @@
-export function fetchMovies(movies) {
-    return function (dispatch) {
-        
+export const fetchMovies = () => {
+    return dispatch => {
         fetch("/movies")
-        .then( (response) => {
-          return response.json();
-        }).then((movies) => {
-          dispatch(moviesFetched(movies));
+         .then(res => {
+          return res.json();
+        }).then(movies => {
+            dispatch(moviesFetched(movies));
         });
   
     };
@@ -18,23 +17,19 @@ export function moviesFetched(movies) {
     };
 }
 
-export function createMovie(movie) {
-    return function (dispatch) {
-          
+export const createMovie = movie =>  {
+    return dispatch => {   
       fetch("/movies", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(movie)
-      }
-   ).then( (response) => {
-            return response.json();
-          }).then((movies) => {
-            dispatch(fetchMovies(movies));
-          });
-    
-    };
+      }).then(() => dispatch(fetchMovies(movie)))
+          // }).then((movies) => {
+          //   dispatch(fetchMovies(movies));
+          // });
+    }
   }
 
   export function deleteMovie(id) {

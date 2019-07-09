@@ -50,7 +50,7 @@ class CreateMovie extends Component {
                     });
                 }} /> 
                 </div>
-                <button>Create</button>
+                <button type="submit">Create</button>
                 </form>
             </div>
         )

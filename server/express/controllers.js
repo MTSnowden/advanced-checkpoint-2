@@ -17,3 +17,9 @@ module.exports.create = function create(req, res) {
 module.exports.remove = function remove(req, res) {
   return MoviesModel.findByIdAndRemove(req.params.id).then(movie => res.json(movie)); 
 }
+
+module.exports.removeEmpty = function removeEmpty(req, res) {
+  return MoviesModel.deleteMany({ "year": { $exists: false } })
+    .then(results => res.json(results))
+    .catch(err => res.send(err.message))
+}

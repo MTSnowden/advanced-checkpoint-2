@@ -4,7 +4,8 @@ import router from './express/routes'
 const bodyParser = require('body-parser')
 const app = express();
 
-
+app.use(bodyParser.json())
+app.use(express.static("public"))
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -12,8 +13,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb+srv://Oprah:Oprah@cluster0-chqnf.mongodb.net/test?retryWrites=true&w=majority");
 
 app.use(router)
-app.use(express.statuc("public"))
-app.use(bodyParser.json())
+
 
 
 const port = process.env.PORT || 3105;

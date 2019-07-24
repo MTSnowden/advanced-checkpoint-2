@@ -20,7 +20,7 @@ class CreateMovie extends Component {
                     e.preventDefault();
                 if (this.props.createMovie) {
                     this.props.createMovie(this.state);
-                }
+                    }
                 }}>
                 <div>
                 Title: <input onChange={(e) => {

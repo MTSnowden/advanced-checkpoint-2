@@ -35,7 +35,7 @@ export const createMovie = movie =>  {
   export function deleteMovie(id) {
     return function (dispatch) {
           
-      fetch(`http://localhost:3002/movies/${id}`, {
+      fetch(`/movies/${id}`, {
         method: "DELETE"
       }
    )

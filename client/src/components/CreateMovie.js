@@ -14,8 +14,8 @@ class CreateMovie extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Movie</h1>
+            <div style={{color:'blue', fontFamily: 'Roboto'}}>
+                <h1 >Movie</h1>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                 if (this.props.createMovie) {
@@ -55,6 +55,10 @@ class CreateMovie extends Component {
             </div>
         )
     }
+}
+
+const styles = {
+    color: 'red'
 }
 
 export default CreateMovie;

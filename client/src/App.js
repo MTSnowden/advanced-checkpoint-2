@@ -18,8 +18,8 @@ class App extends Component {
     return (
 
       <div className='body'>
-      <div id="title">
-        MY AMAZING MOVIE DATABASE
+      <div id="title" style={{fontFamily: 'Roboto'}}>
+        MOVIE DATABASE
       </div>
 
       <BrowserRouter>

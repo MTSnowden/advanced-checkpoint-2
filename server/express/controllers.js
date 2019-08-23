@@ -23,3 +23,4 @@ module.exports.removeEmpty = function removeEmpty(req, res) {
     .then(results => res.json(results))
     .catch(err => res.send(err.message))
 }
+

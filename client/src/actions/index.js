@@ -9,7 +9,7 @@ export const fetchMovies = () => {
   
     };
 }
-  
+
 export function moviesFetched(movies) {
     return {
       type: "MOVIES_FETCHED",
@@ -25,29 +25,30 @@ export const createMovie = movie =>  {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(movie)
-      }).then(() => dispatch(fetchMovies(movie)))
+    }).then(() => dispatch(fetchMovies(movie)))
           // }).then((movies) => {
           //   dispatch(fetchMovies(movies));
           // });
-    }
   }
+}
 
-  export function deleteMovie(id) {
+export function deleteMovie(id) {
     return function (dispatch) {
           
       fetch(`/movies/${id}`, {
         method: "DELETE"
       }
    )
-          .then( (response) => {
-            return response.json();
-          }).then(() => {
-            dispatch(fetchMovies());
-          });
-    
-    };
+    .then( (response) => {
+      return response.json();
+    }).then(() => {
+      dispatch(fetchMovies());
+    });
+
+  };
   
-  }
+}
+
 
  
     
